@@ -4,11 +4,20 @@ import { proyectos } from "@/lib/proyectos";
 
 export default function Page() {
   return (
-    <div className="page-shell flex min-h-screen flex-col">
-      <header className="border-b border-borde/70 bg-fondo/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-[76px] w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex min-w-0 items-center gap-3">
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-acento to-fondo-medio ring-1 ring-acento-claro/30">
+    <div className="flex min-h-screen flex-col bg-fondo">
+      <section className="relative overflow-hidden bg-acento text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(70% 90% at 85% 0%, rgba(29,91,216,0.55), transparent 60%), radial-gradient(50% 70% at 10% 100%, rgba(15,61,145,0.8), transparent 65%)",
+          }}
+        />
+
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
+          <div className="flex items-center gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/20">
               <Image
                 alt="UNITEC"
                 className="h-[26px] w-auto"
@@ -17,45 +26,43 @@ export default function Page() {
                 src="/unitec-logo.png"
                 width={26}
               />
-            </div>
+            </span>
             <div className="min-w-0">
-              <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-texto">
+              <p className="text-sm font-semibold leading-tight tracking-[-0.01em]">
                 Lab Hub
               </p>
-              <p className="mt-0.5 truncate text-[11px] leading-tight text-tenue sm:text-xs">
+              <p className="truncate text-[11px] text-blue-200">
                 Laboratorios de Ingeniería
               </p>
             </div>
-          </div>
-          <span className="shrink-0 rounded-full border border-borde bg-fondo-medio/70 px-2.5 py-1.5 text-[10px] font-medium tracking-[0.08em] text-tenue sm:px-3 sm:text-[11px]">
-            UNITEC · 2026
-          </span>
-        </div>
-      </header>
-
-      <main className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pb-16 pt-16 sm:px-6 md:pt-24 lg:px-8">
-        <section aria-labelledby="hero-title">
-          <h1
-            className="max-w-4xl text-4xl leading-[1.08] font-semibold tracking-[-0.055em] text-texto sm:text-5xl lg:text-6xl"
-            id="hero-title"
-          >
-            {"Acceso directo a los "}
-            <span className="text-acento-claro sm:whitespace-nowrap">
-              proyectos del área.
+            <span className="ml-auto shrink-0 rounded-full border border-white/20 px-3 py-1.5 text-[10px] font-medium tracking-[0.1em] text-blue-100 uppercase">
+              UNITEC · 2026
             </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-tenue sm:text-lg sm:leading-8">
-            Reservas, control de horas y asistencias de laboratorio. Elige un sistema para abrirlo
-            en una pestaña nueva.
-          </p>
-        </section>
+          </div>
 
+          <div className="mt-12 max-w-3xl sm:mt-14">
+            <p className="text-[11px] font-semibold tracking-[0.22em] text-blue-200 uppercase">
+              Portal institucional
+            </p>
+            <h1 className="mt-5 text-4xl leading-[1.06] font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+              Sistemas del laboratorio, en un solo lugar.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-blue-100 sm:text-lg">
+              Acceso directo a las herramientas de reservas, control de horas y
+              asistencias del Área de Laboratorios de Ingeniería.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto w-full max-w-6xl flex-1 px-5 py-10 sm:px-8 sm:py-14">
         <ProjectSearch proyectos={proyectos} />
       </main>
 
-      <footer className="relative z-10 border-t border-borde/70">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-tenue sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <footer className="border-t border-borde">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-tenue sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>Área de Laboratorios de Ingeniería · UNITEC</p>
+          <p>Acceso directo a los sistemas</p>
         </div>
       </footer>
     </div>

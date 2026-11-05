@@ -8,15 +8,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark",
-  themeColor: "#04042e",
+  colorScheme: "light",
+  themeColor: "#0b2a66",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es">
       <body className="antialiased">{children}</body>
     </html>
   );
